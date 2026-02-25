@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV Summary Tailor — Ayodeji Bamidele</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="wrapper">
+
+    <header>
+      <p class="eyebrow">CV Toolkit · Ayodeji Bamidele</p>
+      <h1>Tailor your summary<br>to any <em>job description</em></h1>
+      <p class="subtitle">Paste a job description below and get a rewritten summary that mirrors the employer's exact language — in seconds.</p>
+    </header>
+    <div class="profile-pill">
+      <div class="dot">AB</div>
+      DevOps Engineer · Lagos, Nigeria · 3+ years experience
+    </div>
+
+    <div class="your-summary">
+      <p class="label">Your current summary</p>
+      <p>Results-driven DevOps Engineer with 3+ years of experience designing, deploying, and optimizing cloud-native infrastructure at scale. Proven track record of reducing infrastructure costs, improving deployment velocity, and driving system reliability across distributed environments. Skilled in Kubernetes, Docker, CI/CD automation, and cloud platforms (AWS, GCP, Azure). Experienced collaborating cross-functionally in agile teams to align engineering solutions with business objectives.</p>
+    </div>
+
+    <div class="divider"></div>
+
+    <p class="section-label">Paste the Job Description</p>
+    <textarea id="jdInput" placeholder="Paste the full job description here — the more detail, the better the tailoring…"></textarea>
+    <div class="char-counter"><span id="charCount">0</span> characters</div>
+
+    <div class="tip">
+      <span class="tip-icon">💡</span>
+      <span>Include the full JD — job title, responsibilities, and required skills. The tool picks out the key phrases employers care about and weaves them into your summary naturally.</span>
+    </div>
+
+    <button class="btn" id="tailorBtn" onclick="tailorSummary()">
+      <div class="spinner"></div>
+      <span class="btn-text">Tailor my summary →</span>
+    </button>
+
+    <div class="error-msg" id="errorMsg"></div>
+
+    <div class="result-section" id="resultSection">
+      <div class="result-card">
+        <div class="result-header">
+          <div class="result-header-left">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            <span class="result-title">Tailored Summary</span>
+          </div>
+          <button class="copy-btn" id="copyBtn" onclick="copySummary()">
+            <svg width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <rect x="9" y="9" width="13" height="13" rx="2"/>
+              <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/>
+            </svg>
+            Copy
+          </button>
+        </div>
+        <div class="result-body">
+          <p id="resultText"></p>
+          <div class="keywords-section">
+            <p class="keywords-label">Keywords matched from JD</p>
+            <div class="keywords" id="keywordsContainer"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
